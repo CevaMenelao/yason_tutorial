@@ -9,6 +9,9 @@
 
 / HomeR GET POST
 
+/enrique ComunityR GET      
+--R de ruta 
+
 /comments CommentR POST
 
 /profile ProfileR GET

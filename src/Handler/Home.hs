@@ -33,7 +33,8 @@ getHomeR = do
         toWidget . preEscapedToHtml . renderText $ holamundo
 
 postHomeR :: Handler Html
-postHomeR = do
+postHomeR = undefined {-do
+
     ((result, formWidget), formEnctype) <- runFormPost sampleForm
     let handlerName = "postHomeR" :: Text
         submission = case result of
@@ -46,7 +47,9 @@ postHomeR = do
         aDomId <- newIdent
         setTitle "Welcome To Yesod!"
         $(widgetFile "homepage")
+-}
 
+{-
 sampleForm :: Form FileForm
 sampleForm = renderBootstrap3 BootstrapBasicForm $ FileForm
     <$> fileAFormReq "Choose a file"
@@ -68,3 +71,7 @@ commentIds = ("js-commentForm", "js-createCommentTextarea", "js-commentList")
 
 getAllComments :: DB [Entity Comment]
 getAllComments = selectList [] [Asc CommentId]
+-}
+
+getEnriquR :: Handler Html
+getEnriquR = undefined

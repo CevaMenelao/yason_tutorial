@@ -19,7 +19,5 @@ import Data.Text.Lazy.IO as L
 import           Database.Persist.Sql ( fromSqlKey )
 
 holamundo :: Html ()
-holamundo = do
-    div_ [] $ do
-        p_ [] "Hola mundo"
+holamundo = div_ [] $ p_ [] "Hola mundo"
 

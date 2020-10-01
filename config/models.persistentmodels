@@ -6,13 +6,20 @@ User
     password Text Maybe
     UniqueUser ident
     deriving Typeable
-Email
-    email Text
-    userId UserId Maybe
-    verkey Text Maybe
-    UniqueEmail email
-Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived.
-    message Text
-    userId UserId Maybe
-    deriving Eq
-    deriving Show
+
+Parameter
+    author (UserId)
+    alias Text
+    elements [Models.ModelElement.Element]
+
+Post
+    parametro ParameterId
+    author UserId
+    date UTCTime
+    comments [Comment]
+
+Comment
+    author UserId
+    post PostId
+    date UTCTime
+    text Text
